@@ -47,4 +47,4 @@ class ProductFactory(factory.Factory):
     description = factory.Faker("text", max_nb_chars=250)
     price = FuzzyDecimal(0.5, 2000.0, precision=2)
     available = FuzzyChoice(choices=[True, False])
-    category = FuzzyChoice([c for c in Category])
+    category = FuzzyChoice(list(Category))
